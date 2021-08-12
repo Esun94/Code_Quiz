@@ -1,7 +1,9 @@
 var startBtn = document.getElementById('start-btn');
 var startEl = document.getElementById('start');
 var quizEl = document.getElementById('quiz');
-var rightAnsBtn = document.getElementById('')
+var timerEl = document.getElementById('timer-box');
+var rightAnsBtn = document.getElementById('');
+// var questionEl = document.getElementById('question');
 var myQuestion;
 var questions = [
     {
@@ -41,10 +43,28 @@ function buildQuiz() {
     })
 }
 
+function countdown() {
+    var timeLeft = 15;
+
+    var timeInterval = setInterval(function () {
+
+        if (timeLeft > 0) {
+            timerEl.textContent = timeLeft + ' seconds left';
+            timeLeft--
+        } else {
+            timerEl.textContent = '';
+            clearInterval(timeInterval);
+            alert('TIMES OUT')
+        }
+    }, 1000);
+}
+
+
+
+
 function checkAnswer() {
     console.log(this.value);
     if(this.value !== myQuestion.answer) {
-        
         console.log('wrong')
     }
 q++;
@@ -56,5 +76,5 @@ startBtn.addEventListener('click', function () {
     startEl.classList.add('hide')
     quizEl.classList.remove('hide')
     buildQuiz();
-    
+    countdown();
 })

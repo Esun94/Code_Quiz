@@ -41,7 +41,7 @@ p, h1 {
 #btn-box {
     display: flexbox;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
 
@@ -51,4 +51,13 @@ p, h1 {
     border-radius: 10px;
     background-color: rgb(195, 164, 231);
     box-shadow: 0 0 10px 2px;
+}
+
+#timer-box {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 0%;
+    border-width: 5px;
 }
